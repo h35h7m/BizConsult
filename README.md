@@ -33,26 +33,48 @@
 
 ## 🔧 Installation (Using Laravel)
 
-This project integrates the **BizConsult** HTML template into a Laravel application. To set it up, follow these steps:
+To get started, clone this repository.
 
-```bash
-# 1. Clone your Laravel project (or create a new one)
-git clone https://github.com/yourusername/your-laravel-project.git
-cd your-laravel-project
+```
+git clone https://github.com/h35h7m/BizConsult.git
+```
 
-# 2. Install PHP dependencies
+Next, copy your `.env.example` file as `.env` and configure your Database connection.
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOUR-DATABASE-NAME
+DB_USERNAME=YOUR-DATABASE-USERNAME
+DB_PASSWORD=YOUR-DATABASE-PASSWROD
+```
+
+## Run Packages and helpers
+
+You have to all used packages and load helpers as below.
+
+```
 composer install
-
-# 3. Install Node dependencies and build frontend assets
 npm install
-npm run dev   # or npm run build for production
+npm run build
+```
 
-# 4. Copy the BizConsult assets into Laravel's public directory
-# Example:
-cp -r path/to/bizconsult/assets/* public/
+## Generate new application key
 
-# 5. Create or edit Blade templates (resources/views) to include BizConsult HTML
-# Example:
-# - Paste content of index.html into resources/views/welcome.blade.php
-# - Update asset paths to use Laravel's asset() helper
+You have to generate new application key as below.
+
+```
+php artisan key:generate
+```
+
+## Run Migrations and seeders
+
+You have to run all the migration files included with the project and also run seeders as below.
+
+```
+php artisan migrate
+php artisan db:seed
+```
+
 
